@@ -5,22 +5,24 @@ const scrap = new Scrap();
 const app = express();
 
 app.get('/', async (_req, res) => {
-    return res.send('Hello World!');
+    res.status(200).json({
+        message: 'Welcome to the API'
+    });
 });
 
 app.get('/api/tech', async (_req, res) => {
     const data = await scrap.latest('tech');
-    res.json(data);
+    res.status(200).json(data);
 });
 
 app.get('/api/ai', async (_req, res) => {
     const data = await scrap.latest('ai');
-    res.json(data);
+    res.status(200).json(data);
 });
 
 app.get('/api/crypto', async (_req, res) => {
     const data = await scrap.latest('crypto');
-    res.json(data);
+    res.status(200).json(data);
 });
 
 app.listen(3000, () => {
