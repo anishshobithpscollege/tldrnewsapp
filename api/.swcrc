@@ -1,0 +1,14 @@
+{
+	"jsc": {
+	  "parser": {
+		"syntax": "typescript"
+	  },
+	  "target": "es2022",
+	  "keepClassNames": true,
+	  "baseUrl": "./src"
+	},
+	"module": {
+	  "type": "es6"
+	},
+	"sourceMaps": true
+  }
