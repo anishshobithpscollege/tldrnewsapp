@@ -8,17 +8,17 @@ app.get('/', async (_req, res) => {
     return res.send('Hello World!');
 });
 
-app.get('/tech', async (_req, res) => {
+app.get('/api/tech', async (_req, res) => {
     const data = await scrap.latest('tech');
     res.json(data);
 });
 
-app.get('/ai', async (_req, res) => {
+app.get('/api/ai', async (_req, res) => {
     const data = await scrap.latest('ai');
     res.json(data);
 });
 
-app.get('/crypto', async (_req, res) => {
+app.get('/api/crypto', async (_req, res) => {
     const data = await scrap.latest('crypto');
     res.json(data);
 });
