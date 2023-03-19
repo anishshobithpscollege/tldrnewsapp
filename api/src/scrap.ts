@@ -2,6 +2,24 @@ import * as cheerio from 'cheerio';
 import { fetch } from 'undici';
 import { Data, Story } from './type.js';
 
+/**
+ * Scrap the tldr.tech website
+ * @class Scrap
+ * @version 1.0.0
+ * @example
+ * const scrap = new Scrap();
+ * // default page is tech
+ * const stories = await scrap.latest();
+ * console.log(stories);
+ * @example
+ * const scrap = new Scrap();
+ * const stories = await scrap.latest('ai');
+ * console.log(stories);
+ * @example
+ * const scrap = new Scrap();
+ * const stories = await scrap.latest('crypto');
+ * console.log(stories);
+ */
 export class Scrap {
     /**
      * The base url to the scrap
@@ -65,6 +83,11 @@ export class Scrap {
         return JSON.parse(script!) as Data;
     }
 
+    /**
+     * Clean the text
+     * @param text The text to clean
+     * @returns {string} The cleaned text
+     */
     private cleanText(text: string): string {
         return text.replace(/<\/?[^>]+(>|$)/g, "");
     }
